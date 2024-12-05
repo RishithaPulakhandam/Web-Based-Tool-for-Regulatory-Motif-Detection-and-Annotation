@@ -9,11 +9,18 @@
 <body>
     <h1>Regulatory Motif Detection and Annotation</h1>
     <form id="uploadForm" action="/cgi-bin/backend.py" method="post" enctype="multipart/form-data">
+        <!-- Option to input FASTA sequence directly -->
+        <label for="fasta_input">Enter DNA sequence (FASTA format):</label>
+        <textarea id="fasta_input" name="fasta_input" rows="10" cols="50" placeholder=">header1\nATGCGT...\n>header2\nGCTAGT..."></textarea>
+        <br><br>
+
+        <!-- Option to upload a FASTA file -->
         <label for="fasta_file">Upload DNA sequence (FASTA format):</label>
         <input type="file" id="fasta_file" name="fasta_file" accept=".fasta" required>
         <button type="submit">Submit</button>
     </form>
-    <div id="results">
+
+    <div id="results" style="display:none;">
         <h2>Annotated Sequence</h2>
         <div id="sequenceOutput"></div>
         <h2>Motif Summary</h2>

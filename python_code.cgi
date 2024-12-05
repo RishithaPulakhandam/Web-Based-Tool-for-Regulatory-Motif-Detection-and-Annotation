@@ -19,16 +19,38 @@ def connect_db():
     )
 
 # Function to parse a FASTA file
-def parse_fasta(file):
+def parse_fasta(file, fasta_input):
     sequences = {}
-    current_header = None
-    for line in file:
-        line = line.strip()
-        if line.startswith(">"):
-            current_header = line[1:]
-            sequences[current_header] = ""
-        else:
-            sequences[current_header] += line
+    current_header = None  # Initialize header variable
+
+    if fasta_input:  # If a direct input is provided
+        lines = fasta_input.strip().split("\n")
+        for line in lines:
+            if line.startswith(">"):  # Header line
+                current_header = line[1:].strip()
+                sequences[current_header] = ""
+            elif current_header:  # Sequence line
+                sequences[current_header] += line.strip()
+            else:
+                raise ValueError("FASTA input is improperly formatted: Missing header.")
+
+    elif file and file.file:  # If a file is uploaded
+        for line in file.file:
+            line = line.decode("utf-8").strip()  # Decode to string
+            if line.startswith(">"):  # Header line
+                current_header = line[1:].strip()
+                sequences[current_header] = ""
+            elif current_header:  # Sequence line
+                sequences[current_header] += line.strip()
+            else:
+                raise ValueError("FASTA file is improperly formatted: Missing header.")
+
+    else:
+        raise ValueError("No input provided for FASTA parsing.")
+
+    if not sequences:
+        raise ValueError("No sequences found in the provided FASTA input.")
+
     return sequences
 
 # Function to retrieve motifs from the database
@@ -77,26 +99,35 @@ def main():
 
     # Parsing the form data submitted via CGI
     form = cgi.FieldStorage()
-    fileitem = form["fasta_file"]
+    fasta_input = form.getfirst("fasta_input", "").strip()  # Text area input
+    fileitem = form["fasta_file"] if "fasta_file" in form else None  # File upload
 
-    if fileitem.file:
-        sequences = parse_fasta(fileitem.file)  # Parse the uploaded FASTA file
-        motifs = get_motifs()  # Retrieve motifs from the database
+    try:
+        # Parse the FASTA input from either a file or direct text
+        sequences = parse_fasta(fileitem, fasta_input)
 
-        output = {}  # Dictionary to store results
+        # Retrieve motifs from the database
+        motifs = get_motifs()
+
+        # Annotate sequences and collect results
+        output = {}
         for header, sequence in sequences.items():
-            # Annotate sequence and detect motifs
             annotated_seq, detected_motifs = annotate_sequence(sequence, motifs)
             output[header] = {
                 "annotated_sequence": annotated_seq,  # Annotated sequence with HTML tags
-                "motifs": detected_motifs  # Detected motifs with details
+                "motifs": detected_motifs             # Detected motifs with details
             }
 
-        # Return the output as a JSON response
+        # Return the annotated sequences and motif details as JSON
         print(json.dumps(output))
-    else:
-        # Handle the case where no file is uploaded
-        print(json.dumps({"error": "No file was uploaded"}))
+
+    except ValueError as e:
+        # Handle input validation errors
+        print(json.dumps({"error": str(e)}))
+
+    except Exception as e:
+        # Handle unexpected errors
+        print(json.dumps({"error": "An unexpected error occurred.", "details": str(e)}))
 
 # Execute the main function when the script is run
 if __name__ == "__main__":
