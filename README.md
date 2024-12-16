@@ -94,16 +94,16 @@ This tool is designed to detect regulatory motifs in DNA sequences submitted in 
 8. sample_BRCA1.fasta - BRCA1 gene sequence from NCBI 
 
 #### **Usage Instructions**:
-    Make sure the vpn.jh.edu is connected
+   Make sure the vpn.jh.edu is connected <br>
 
 1. **Open the tool**
    - Access to the Regulatory Motif Detection Tool at: [Regulatory Motif Detection and Annotation Tool](http://bfx3.aap.jhu.edu/rpulakh1/Final-Project/index.html)
 
 2. **Upload Input**:  
    - Submit DNA sequences in FASTA format using the web interface.  
-   - You can use the below sample sequences or any FASTA sequence of your choice.
-     sample1.fasta - Random Short Sequence for testing
-     sample_BRCA1.fasta - BRCA1 gene sequence from NCBI 
+   - You can use the below sample sequences or any FASTA sequence of your choice.<br>
+   sample1.fasta - Random Short Sequence for testing<br>
+   sample_BRCA1.fasta - BRCA1 gene sequence from NCBI 
 3. **View Results**:  
    - Annotated sequences with highlighted motifs.  
    - Summary table with motif occurrences and details.  
