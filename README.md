@@ -1,14 +1,13 @@
 ### README: Web-Based Tool for Regulatory Motif Detection and Annotation
-### Final-Project
+#### Final-Project
 
-
-This Tool is the final project for the Advanced Practical computer concepts class. 
+##### This Tool is the final project for the Advanced Practical computer concepts class. 
 ---
 
 #### **Project Title**:  
 A Web-Based Tool for Regulatory Motif Detection and Annotation  
 
-Access the Regulatory Motif Detection Tool at: [Regulatory Motif Tool](http://bfx3.aap.jhu.edu/rpulakh1/Final-Project/index.html)
+##### Access to the Regulatory Motif Detection Tool at: [Regulatory Motif Detection and Annotation Tool](http://bfx3.aap.jhu.edu/rpulakh1/Final-Project/index.html)
 ---
 
 #### **Project Description**:  
@@ -86,7 +85,7 @@ This tool is designed to detect regulatory motifs in DNA sequences submitted in 
 
 #### **Usage Instructions**:
 1. **Open the tool**
-   - Access the Regulatory Motif Detection Tool at: [Regulatory Motif Tool](http://bfx3.aap.jhu.edu/rpulakh1/Final-Project/index.html)
+   - Access to the Regulatory Motif Detection Tool at: [Regulatory Motif Detection and Annotation Tool](http://bfx3.aap.jhu.edu/rpulakh1/Final-Project/index.html)
 
 2. **Upload Input**:  
    - Submit DNA sequences in FASTA format using the web interface.  
