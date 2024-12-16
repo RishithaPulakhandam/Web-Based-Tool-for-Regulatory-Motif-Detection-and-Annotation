@@ -1,0 +1,123 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* Heading Styles */
+h1 {
+    color: #444;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #444;
+    margin-top: 20px;
+}
+/* Form Styling */
+form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+form textarea {
+    width: 100%;
+    min-height: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Results Section */
+#results {
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#sequenceOutput {
+    background-color: #f8f8f8; 
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 14px;
+    white-space: pre-wrap; 
+    word-break: break-word; 
+    overflow-wrap: break-word;
+    line-height: 1.6;
+    max-height: 500px; 
+    overflow-y: auto; 
+    overflow-x: auto; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Result Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    text-align: center; 
+    vertical-align: middle;    
+    padding: 8px;
+}
+
+table td:nth-child(6) {
+    text-align: left; /*left aligning the last column for better visual and readability */
+}
+
+table th {
+    text-align: center; 
+    vertical-align: middle;
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Highlight for Detected Motifs */
+span {
+    font-weight: bold;
+    color: red;
+}
+
