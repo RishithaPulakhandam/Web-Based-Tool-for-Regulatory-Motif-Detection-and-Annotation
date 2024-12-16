@@ -4,37 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regulatory Motif Detection Tool</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
     <h1>Regulatory Motif Detection and Annotation</h1>
     <form id="uploadForm" action="/rpulakh1/Final-Project/python_code.cgi" method="post" enctype="multipart/form-data">
-        <!-- Option to input FASTA sequence directly -->
+        <!--Input FASTA sequence -->
         <label for="fasta_input">Enter DNA sequence (FASTA format):</label>
-        <textarea id="fasta_input" name="fasta_input" rows="10" cols="50" placeholder=">header1\nATGCGT...\n>header2\nGCTAGT..."></textarea>
+        <textarea id="fasta_input" name="fasta_input" rows="10" cols="50" placeholder=">header1\nATGCGT..."></textarea>
         <br><br>
-
-        <!-- Option to upload a FASTA file -->
-        <label for="fasta_file">Upload DNA sequence (FASTA format):</label>
-        <input type="file" id="fasta_file" name="fasta_file" accept=".fasta" required>
+        <!-- Submit Button -->
         <button type="submit">Submit</button>
     </form>
 
     <div id="results" style="display:none;">
         <h2>Annotated Sequence</h2>
         <div id="sequenceOutput"></div>
-        <h2>Motif Summary</h2>
-        <table id="summaryTable">
+        <h2 id="motifSummaryHeading">Motif Summary</h2>
+        <p id="noMatchesMessage" style="display:none; color:red; text-align:center; font-weight:bold;">
+               No matches found
+        </p>
+        <table id="summaryTable" style="display:none;">
             <thead>
                 <tr>
+                    <th>JASPER ID</th>
                     <th>Motif Name</th>
+                    <th>Motif Type</th>
                     <th>Position</th>
                     <th>Detected Sequence</th>
+                    <th>Description</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
     </div>
-    <script src="app.js"></script>
+    <script src="javascript.js">
+    </script>
+
 </body>
 </html>
