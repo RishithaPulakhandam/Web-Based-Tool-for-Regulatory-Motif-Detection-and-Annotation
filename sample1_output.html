@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://bfx3.aap.jhu.edu/rpulakh1/Final-Project/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regulatory Motif Detection Tool</title>
+    <link rel="stylesheet" href="./sample1_output.html _files/stylesheet.css">
+</head>
+<body>
+    <h1>Regulatory Motif Detection and Annotation</h1>
+    <form id="uploadForm" action="http://bfx3.aap.jhu.edu/rpulakh1/Final-Project/python_code.cgi" method="post" enctype="multipart/form-data">
+        <!--Input FASTA sequence -->
+        <label for="fasta_input">Enter DNA sequence (FASTA format):</label>
+        <textarea id="fasta_input" name="fasta_input" rows="10" cols="50" placeholder="&gt;header1\nATGCGT..."></textarea>
+        <br><br>
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="results" style="display: block;">
+        <h2>Annotated Sequence</h2>
+        <div id="sequenceOutput"><h3>Sample1</h3><p>GTGCG<span style="color:red;">TGACCTTAGCTTTTT</span>CGTCGTCAGTC<span style="color:red;">TATGTGGGAAA</span></p></div>
+        <h2 id="motifSummaryHeading" style="display: block;">Motif Summary</h2>
+        <p id="noMatchesMessage" style="display: none; color: red; text-align: center; font-weight: bold;">
+               No matches found
+        </p>
+        <table id="summaryTable" style="display: table;">
+            <thead>
+                <tr>
+                    <th>JASPER ID</th>
+                    <th>Motif Name</th>
+                    <th>Motif Type</th>
+                    <th>Position</th>
+                    <th>Detected Sequence</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>MA0002.1</td>
+                        <td>RUNX1</td>
+                        <td>Promoter</td>
+                        <td>31-42</td>
+                        <td>TATGTGGGAAA</td>
+                        <td>Species: Homo sapiens.<br>Class: Runt domain factors.<br>Family: Runt-related factors.</td>
+                    </tr>
+                
+                    <tr>
+                        <td>MA0017.1</td>
+                        <td>NR2F1</td>
+                        <td>Enhancer</td>
+                        <td>5-20</td>
+                        <td>TGACCTTAGCTTTTT</td>
+                        <td>Species: Homo sapiens.<br>Class: Nuclear receptors with C4 zinc fingers.<br>Family: RXR-related receptors (NR2).</td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+    <script src="./sample1_output.html _files/javascript.js">
+    </script>
+
+
+
+</body></html>
