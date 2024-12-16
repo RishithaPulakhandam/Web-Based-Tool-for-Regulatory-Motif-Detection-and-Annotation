@@ -82,6 +82,16 @@ This tool is designed to detect regulatory motifs in DNA sequences submitted in 
    - Comprehensive details on detected motifs, including names, start and end positions, JASPER ID, Descripition of the motif.  
 
 ---
+#### **FILES**:
+
+1. index.html - HTML File
+2. javascript.js - Javascript File
+3. python_code.cgi -Python code File
+4. regulatory_motifs.csv - SQL Table Entries
+5. regulatory_motifs.sql
+6. stylesheet.css - Stylesheet File
+7. sample1.fasta - Random Short Sequence for testing
+8. sample_BRCA1.fasta - BRCA1 gene sequence from NCBI 
 
 #### **Usage Instructions**:
 1. **Open the tool**
@@ -89,7 +99,9 @@ This tool is designed to detect regulatory motifs in DNA sequences submitted in 
 
 2. **Upload Input**:  
    - Submit DNA sequences in FASTA format using the web interface.  
-
+   - You can use the below sample sequences or any FASTA sequence of your choice.
+     sample1.fasta - Random Short Sequence for testing
+     sample_BRCA1.fasta - BRCA1 gene sequence from NCBI 
 3. **View Results**:  
    - Annotated sequences with highlighted motifs.  
    - Summary table with motif occurrences and details.  
